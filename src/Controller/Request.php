@@ -24,6 +24,6 @@ class Request extends Controller
     public function detail(int $id)
     {
         return $this->response
-            ->setJsonContent(json_decode('{"id":'.$id.',"description":"Hi there, this is a description","created":"2019-11-19 23:59:59","watchers":[1,12]}'));
+            ->setJsonContent(json_decode('{"id":'.$id.',"description":"Hi there, this is a description","created":"2019-11-19 23:59:59","watchers":2}'));
     }
 }

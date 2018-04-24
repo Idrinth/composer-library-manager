@@ -4,7 +4,9 @@ use De\Idrinth\ComposerLibraryManager\Controller\Comment;
 use De\Idrinth\ComposerLibraryManager\Controller\Home;
 use De\Idrinth\ComposerLibraryManager\Controller\Request;
 use De\Idrinth\ComposerLibraryManager\Controller\User;
+use De\Idrinth\ComposerLibraryManager\Controller\Watch;
 use De\Idrinth\ComposerLibraryManager\Route\ClassRoute;
+use De\Idrinth\ComposerLibraryManager\Route\Delete;
 use De\Idrinth\ComposerLibraryManager\Route\Get;
 use De\Idrinth\ComposerLibraryManager\Route\Patch;
 use De\Idrinth\ComposerLibraryManager\Route\Post;
@@ -27,6 +29,11 @@ require_once __DIR__.'/vendor/autoload.php';
         new ClassRoute(User::class, [
             new Get('index', '/users/'),
             new Get('own', '/user/'),
+        ]),
+        new ClassRoute(Watch::class, [
+            new Get('index', '/watchers/{id}/'),
+            new Put('join', '/watch/{id}/'),
+            new Delete('leave', '/watch/{id}/'),
         ]),
         new ClassRoute(Home::class, [
             new Get('index', '/'),
