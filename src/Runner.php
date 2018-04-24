@@ -17,15 +17,15 @@ class Runner
         foreach($routes as $route) {
             $route($di->get('router'));
         }
-        $di->set('view', (function() {
+        $di->set('view', function() {
             return new View();
-        })());
-        $di->set('dispatcher', (function() {
+        });
+        $di->set('dispatcher', function() {
             $dispatcher = new Dispatcher();
             $dispatcher->setActionSuffix('');
             $dispatcher->setControllerSuffix('');
             return $dispatcher;
-        })());
+        });
         return (new Application($di))->handle($this->getPath())->send();
     }
     private function getPath():string
