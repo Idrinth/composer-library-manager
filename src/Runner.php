@@ -13,7 +13,7 @@ class Runner
     public function __invoke(array $routes)
     {
         $di = new FactoryDefault();
-        $di->set('router', new Router());
+        $di->set('router', new Router(false));
         foreach($routes as $route) {
             $route($di->get('router'));
         }
