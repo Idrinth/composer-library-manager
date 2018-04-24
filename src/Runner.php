@@ -32,8 +32,8 @@ class Runner
     {
         return $this->replaceStart(
             $this->replaceStart(
-                $_SERVER['DOCUMENT_ROOT'],
-                dirname(__DIR__)
+                realpath($_SERVER['DOCUMENT_ROOT']),
+                realpath(dirname(__DIR__))
             ),
             $_SERVER['REQUEST_URI']
         );

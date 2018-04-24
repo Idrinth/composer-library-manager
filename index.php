@@ -10,6 +10,7 @@ use De\Idrinth\ComposerLibraryManager\Route\Delete;
 use De\Idrinth\ComposerLibraryManager\Route\Get;
 use De\Idrinth\ComposerLibraryManager\Route\Patch;
 use De\Idrinth\ComposerLibraryManager\Route\Post;
+use De\Idrinth\ComposerLibraryManager\Route\Put;
 use De\Idrinth\ComposerLibraryManager\Runner;
 
 require_once __DIR__.'/vendor/autoload.php';
